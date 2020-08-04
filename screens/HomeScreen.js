@@ -142,42 +142,42 @@ function InflateViewForshow() {
 function BottomTabImageForNeed() {
 
     return (
-        <View style={{ flex: 1, flexDirection: "row", alignItems: "flex-end" }}>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        
+        <View style={{ flexDirection: "column" }}>
+          <Image
+            source={require("../assets/calendar.png")}
+            resizeMode="contain"
+            alignSelf="center"
+            style={{ width: 28, alignContent: "center", height: 28 }}
+          />
 
-            <Image
-                source={require("../assets/calendar.png")}
-                resizeMode="contain"
-                alignSelf="center"
-                style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
-            />
-
-
-
-            <Image
-                resizeMode="contain"
-                source={require("../assets/calendar.png")}
-                alignSelf="center"
-                style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
-            />
-
-            <Image
-                resizeMode="contain"
-                alignSelf="center"
-                source={require("../assets/comment.png")}
-                style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
-            />
-
-            <Image
-                resizeMode="contain"
-                alignSelf="center"
-                source={require("../assets/phone.png")}
-                style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
-            />
+          <Text>Prescripion</Text>
 
         </View>
 
+        <Image
+          resizeMode="contain"
+          source={require("../assets/calendar.png")}
+          alignSelf="center"
+          style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
+        />
 
-    )
+        <Image
+          resizeMode="contain"
+          alignSelf="center"
+          source={require("../assets/comment.png")}
+          style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
+        />
+
+        <Image
+          resizeMode="contain"
+          alignSelf="center"
+          source={require("../assets/phone.png")}
+          style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
+        />
+      </View>
+    );
 
 }
 
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
 
     MainContainer: {
         // Setting up View inside content in Vertically center.
-        marginTop: 74,
+        marginTop: 14,
         flexDirection: "row",
         marginStart: 24,
         marginEnd: 24,

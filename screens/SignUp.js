@@ -13,6 +13,8 @@ import {
 
 import PhoneInput from "react-native-phone-input";
 import MainStackDrawerNavigator from "../screens/MainStackDrawerNavigator"
+import Appointments from "../screens/appointments/Appointments";
+
 
 
 class SignUp extends React.Component{
@@ -70,9 +72,7 @@ class SignUp extends React.Component{
             >
               <Button
                 primary
-                onPress={() =>
-                  this.props.navigation.navigate("PostAppointments")
-                }
+                onPress={() => this.props.navigation.navigate("Appointments")}
                 style={{
                   justifyContent: "center",
                   alignSelf: "stretch",

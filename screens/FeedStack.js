@@ -2,25 +2,56 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
  
 import HomeScreen from '../screens/HomeScreen'
+import Appointments from "../screens/appointments/Appointments";
+
+  import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
  
 const StackNav = createStackNavigator();
 
-export  const FeedStack = () => {
-    return (
-      <StackNav.Navigator
-        initialRouteName="HomeScreen"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <StackNav.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ headerTitle: "HomeScreen" }}
-        />
-      </StackNav.Navigator>
-    );
-};
+function LogoTitle(props) {
+  return (
+    <Icon
+      name="menu"
+      paddingLeft={12}
+      color={"#FFFFFF"}
+      size={34}
+      onPress={() => {
+        props.navigator.navigation.toggleDrawer();
+      }}
+    />
+  );
+}
+
+export  const FeedStack = (props) => {
+          return (
+            <StackNav.Navigator initialRouteName="HomeScreen">
+              <StackNav.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{
+                  headerStyle: {
+                    backgroundColor: "#23B2FE",
+                  },
+                  headerTitle: (props) => <LogoTitle {...props} />,
+                  headerLeft: null,
+                }}
+              />
+
+              <StackNav.Screen
+                name="Appointments"
+                component={Appointments}
+                options={{
+                  headerStyle: {
+                    backgroundColor: "#23B2FE",
+                  },
+                  headerTitle: (props) => <LogoTitle {...props} />,
+                  headerLeft: null,
+                }}
+              />
+            </StackNav.Navigator>
+          );
+        };
 
 
 

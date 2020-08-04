@@ -5,7 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Splash from './screens/Splash';
 import SignUp from "./screens/SignUp";
 import MainStackDrawerNavigator from "./screens/MainStackDrawerNavigator";
-import PostAppointments from "./screens/appointments/PostAppointments"
+import Appointments from "./screens/appointments/Appointments";
+
 
 export default function App() {
   return (
@@ -34,16 +35,25 @@ function MyStack() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="Appointments"
+        component={Appointments}
+        options={{
+          title: "Appointments",
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+
       <Stack.Screen
         name="MainStackDrawerNavigator"
         component={MainStackDrawerNavigator}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="PostAppointments"
-        component={PostAppointments}
         options={{
           headerShown: false,
         }}

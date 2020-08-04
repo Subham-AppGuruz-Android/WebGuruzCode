@@ -1,15 +1,15 @@
-import * as React from "react";
-import { View, Image } from "react-native";
+    import * as React from "react";
+    import { View, Image } from "react-native";
 
 
-export default class Splash extends React.Component{
+    export default class Splash extends React.Component{
     constructor(props){
         super(props);
         setTimeout(()=>{
             this.props.navigation.navigate("SignUp");
         },2000);
     }
-   
+
     render(){
         return(
             <View style={{ flex:1,backgroundColor:"#23B2FE"}}>
@@ -26,4 +26,4 @@ export default class Splash extends React.Component{
             </View>
         )
     }
-}
+    }
