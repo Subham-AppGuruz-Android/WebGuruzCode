@@ -72,7 +72,7 @@ class SignUp extends React.Component{
             >
               <Button
                 primary
-                onPress={() => this.props.navigation.navigate("Appointments")}
+                onPress={() => this.props.navigation.navigate("MyAppointmentClicnic")}
                 style={{
                   justifyContent: "center",
                   alignSelf: "stretch",

@@ -76,7 +76,7 @@ function InflateViewForshow() {
 
                 <Card cardElevation={5}
                     cardMaxElevation={5}
-                    cornerRadius={5}
+                    cornerRadi9us={5}
                     style={styles.cardViewStyle} >
 
                     <View style={{ flex: 2, flexDirection: "column" }}>
@@ -144,17 +144,13 @@ function BottomTabImageForNeed() {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
         
-        <View style={{ flexDirection: "column" }}>
-          <Image
-            source={require("../assets/calendar.png")}
-            resizeMode="contain"
-            alignSelf="center"
-            style={{ width: 28, alignContent: "center", height: 28 }}
-          />
+            <Image
+                resizeMode="contain"
+                source={require("../assets/calendar.png")}
+                alignSelf="center"
+                style={{ flex: 1, width: 28, alignContent: "center", height: 28 }}
+            />
 
-          <Text>Prescripion</Text>
-
-        </View>
 
         <Image
           resizeMode="contain"

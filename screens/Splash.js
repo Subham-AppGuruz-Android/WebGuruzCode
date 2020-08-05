@@ -16,11 +16,10 @@
 
                 <Image
                     source={require("../assets/colorLogo.png")}
-                    style={{width: 74, height: 74, alignSelf:"center",justifyContent:"center",alignContent:'center',
-                    marginStart: 4 , tintColor:"#FFFFFF" }}
-                    alignContent="center"
-                    justifyContent= "center"
-                    alignItems= "center"
+                    style={{width: 74, 
+                    height: 74,
+                    marginStart: 4 ,
+                    tintColor:"#FFFFFF" }}
                     />
 
             </View>

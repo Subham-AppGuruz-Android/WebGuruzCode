@@ -1,6 +1,5 @@
   import * as React from "react";
   import {
-  Button,
   View,
   StyleSheet,
   Text,
@@ -8,10 +7,10 @@
   ScrollView,
   } from "react-native";
   import { TextInput } from "react-native-gesture-handler";
-  import { Avatar, Card, Title, Paragraph } from "react-native-paper";
   import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
   import { NavigationContainer } from "@react-navigation/native";
-
+  import { Avatar, Card, Title, Paragraph } from "react-native-paper";
+ 
 
   export default class PostAppointments extends React.Component {
                   render() {
@@ -19,6 +18,7 @@
                       // root parent view container
                       <ScrollView>
                         <View>
+                        <HeaderView></HeaderView>
                           <HeaderView></HeaderView>
                           <HeaderView></HeaderView>
                           <HeaderView></HeaderView>
@@ -36,13 +36,19 @@
                   return(
    <View style={{backgroundColor:"#fffff"}}>
                         {/* container for top view */}
+
+                      <Card cardElevation={5}
+                        cardMaxElevation={5}
+                        cornerRadius={5}
+                        style={styles.cardViewStyle} >
+
                         <View style={styles.topviewstyle}>
                           <Image
                             source={require("../../assets/doctor.png")}
                             style={{
                               width: 74,
                               height: 74,
-                              marginStart: 4,
+                              
                               justifyContent: "center",
                               alignContent: "center",
                               alignSelf: "center",
@@ -50,16 +56,33 @@
                           />
 
                           <View style={styles.selfintro}>
-                            <Text
-                              style={{
-                                fontWeight: "bold",
-                                marginTop: 12,
-                                fontSize: 16,
-                              }}
-                            >
-                              {" "}
-                              Appointment with Dr. Christian Maxwell{" "}
-                            </Text>
+
+                          <View style={{flexDirection:"row"}}> 
+
+                              <Text
+                                style={{
+                                  marginTop: 9,
+                                  fontSize: 14,
+                                }}
+                              >
+                                {" "}
+                              Appointment with {" "}
+                              </Text>
+
+                              <Text
+                                style={{
+                                   fontWeight:"bold",
+                                  marginTop: 8,
+                                  marginLeft:-6,
+                                  fontSize: 16,
+                                }}
+                              >
+                                {" "}
+                               Dr. Christian Maxwell{" "}
+                              </Text>
+                          
+                          </View>
+                           
                             <View style={styles.rowsfeed}>
                               <Image
                                 source={require("../../assets/calendar.png")}
@@ -98,6 +121,8 @@
                         {/* container for bottom view */}
                         <View><FooterView> </FooterView></View>
 
+                        
+                          </Card>
 
 
 
@@ -108,60 +133,85 @@
 
  function FooterView(){
     return (
-      
-      
+
       <View
         style={{
-          flexDirection: "column",
+        flexDirection: "column",
           backgroundColor: "#fff"
+          
         }}>
+
+        <View
+          style={{
+            borderBottomColor: '#e8ecef', borderBottomWidth: 1, marginTop: 24
+          }}
+        />
 
 
         <View
           style={{
+            marginTop: 12,
             flexDirection: "row",
-            alignItems: "flex-end",
+            alignItems: "center",
             backgroundColor: "#fff",
           }}
         >
-          <Image
-            resizeMode="contain"
-            source={require("../../assets/calendar.png")}
-            alignSelf="center"
-            style={{
-              flex: 1,
-              width: 28,
-              alignContent: "center",
-              height: 28,
-            }}
-          />
+
+        <View style={{flexDirection:"column",flex:1}}>
+
+            <Image
+              resizeMode="contain"
+              source={require("../../assets/calendar.png")}
+              alignSelf="center"
+              style={{
+                width: 20,
+                height: 20,
+              }}
+            />
+
+
+            <Text style={{alignSelf:'center',fontSize:10,marginStart:12,marginTop:4}}>Prescription</Text>
+
+        </View>
+
+        
+          <View style={{flex:1, flexDirection: "column" }}>
+         
 
           <Image
             resizeMode="contain"
             alignSelf="center"
             source={require("../../assets/comment.png")}
             style={{
-              flex: 1,
-              width: 28,
+              width: 20,
               alignContent: "center",
-              height: 28,
+              height: 20,
             }}
           />
+            <Text style={{ alignSelf: 'center',fontSize: 10,  marginStart: 12, marginTop: 4 }}>Book Again</Text>
 
+          </View>
+
+          <View style={{flex:1, flexDirection: "column" }}>
+
+          
           <Image
             resizeMode="contain"
             alignSelf="center"
             source={require("../../assets/phone.png")}
             style={{
-              flex: 1,
-              width: 28,
+              width: 20,
               alignContent: "center",
-              height: 28,
+              height: 20,
             }}
           />
+            <Text style={{ alignSelf: 'center',fontSize: 10, marginStart: 12, marginTop: 4 }}>Give Feedback</Text>
+
+          </View>
         </View>
       
       
+
       
       </View>
     
@@ -175,16 +225,22 @@
     backgroundColor: "#fff",
   },
 
-  topviewstyle: {
+  topviewstyle: {  
+
     backgroundColor: "#fff",
     flexDirection: "row",
-    marginTop: 28,
+    marginTop: 8,
     marginStart: 12,
     marginRight: 12,
   },
+    cardViewStyle: {
+      height: 200,
+      margin: 12
 
+    },
   selfintro: {
     flexDirection: "column",
+    marginLeft:12
   },
   rowsfeed: {
     flexDirection: "row",

@@ -6,6 +6,10 @@ import Splash from './screens/Splash';
 import SignUp from "./screens/SignUp";
 import MainStackDrawerNavigator from "./screens/MainStackDrawerNavigator";
 import Appointments from "./screens/appointments/Appointments";
+import AppointmentsDetails from "./screens/appointments/AppointmentsDetails";
+import MyAppointmentClicnic from "./screens/clinicappointment/MyAppointmentClicnic";
+
+
 
 
 export default function App() {
@@ -50,6 +54,23 @@ function MyStack() {
           },
         }}
       />
+      <Stack.Screen
+        name="AppointmentsDetails"
+        component={AppointmentsDetails}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name="MyAppointmentClicnic"
+        component={MyAppointmentClicnic}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      
 
       <Stack.Screen
         name="MainStackDrawerNavigator"

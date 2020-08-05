@@ -30,7 +30,7 @@ export default class Appointments extends React.Component{
 function SetTabNav(){
   return (
     <TabND.Navigator>
-      <TabND.Screen name="Post Appointments" component={PostAppointments} />
+      <TabND.Screen name="Post Appointments" component={PostAppointments}  />
       <TabND.Screen name="Upcoming Appointments" component={UpcomingAppointments} />
     </TabND.Navigator>
   );
